@@ -60,8 +60,7 @@ class DefaultJMCDataAccessor implements JMCDataAccessor {
 
 	@Override
 	public Status remove(ByteBuffer key) {
-		ByteBuffer removed = cache.remove(key); 
-		if( removed != null) {			
+		if( cache.remove(key) != null) {			
 			return Status.REMOVED;
 		}
 		return Status.NOT_FOUND;
